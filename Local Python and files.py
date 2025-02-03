@@ -1,10 +1,11 @@
 import random
 
+
 def words_file():
     points = 0
     words = open('words.txt')
     for word in words:
-        word_new = ''.join(random.sample(list(word[:-1]),len(list(word[:-1]))))
+        word_new = ''.join(random.sample(list(word[:-1]), len(list(word[:-1]))))
         print(f'Угадайте слово: {word_new}')
         answer = input()
         if answer == word[:-1]:
@@ -15,11 +16,13 @@ def words_file():
     words.close()
     return points
 
+
 def history_file():
-    history = open('history.txt','a+')
+    history = open('history.txt', 'a+')
     history.write(f'{name} ')
     history.write(f'{points}\n')
     history.close()
+
 
 def history_record():
     record = 0
@@ -29,6 +32,7 @@ def history_record():
         if int(info[1]) > record:
             record = int(info[1])
     return record
+
 
 def history_counts():
     count = 0
